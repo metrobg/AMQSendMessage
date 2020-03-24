@@ -7,19 +7,21 @@ namespace SendMessage
     class SendMessage
     {
 
-
         static void Main(string[] args)
         {
-            String user = Env("ACTIVEMQ_USER", "admin");
-            String password = Env("ACTIVEMQ_PASSWORD", "Ign32ORw3C4b");
-            String host = Env("ACTIVEMQ_HOST", "192.168.144.172");
-            String username = null;
-            String local_host = null;
+            String user        = Env("ACTIVEMQ_USER", "admin");
+            String password    = Env("ACTIVEMQ_PASSWORD", "Ign32ORw3C4b");
+            String host        = Env("ACTIVEMQ_HOST", "192.168.144.172");
+            String username    = null;
+            String local_host  = null;
             String remote_host = null;
+            String in_out      = null;
 
-            username = Arg(args, 0, "unknown_user");
-            local_host = Arg(args, 1, "unknown_local");
-            remote_host = Arg(args, 2, "unknown_remote");
+            username     = Arg(args, 0, "unknown_user");
+            local_host   = Arg(args, 1, "unknown_local");
+            remote_host  = Arg(args, 2, "unknown_remote");
+            in_out       = Arg(args, 3, "IN");
+
             DateTime now = DateTime.Now;
 
             string text = "User=" + username + ";RemoteHost=" + remote_host + ";ComputerName=" + local_host + ";TimeStamp=" + now;
